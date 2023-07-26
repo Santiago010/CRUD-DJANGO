@@ -1,0 +1,17 @@
+{% extends 'base_auth.html' %} {% block content %}
+<div class="w-full h-full flex justify-center items-center flex-col">
+  <form class="bg-green-100 p-8 my-8 rounded-md w-3/5" method="POST">
+    <h1 class="text-center font-mono text-3xl">¡Ingresar!</h1>
+    {% csrf_token %} {{form.as_p}}
+    <button class="py-4 font-mono rounded-md w-full my-1.5 bg-red-400">
+      SignUp
+    </button>
+  </form>
+  <p class="text-center font-mono text-3xl">{{error}}</p>
+
+  <a href="/signup" class="p-4 font-mono rounded-md my-1.5 underline">
+    SingUp
+  </a>
+</div>
+
+{% endblock %}

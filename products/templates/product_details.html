@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<div class="w-full h-full flex justify-center items-center flex-col">
+  <form
+    class="bg-green-100 p-8 my-8 rounded-md w-3/5 flex flex-col"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <h1 class="text-center font-mono text-3xl">¡Detalles Producto!</h1>
+    <img class="h-64 w-64 self-center" src="{{producto.image.url}}" alt="" />
+    {% csrf_token %} {{form.as_p}}
+    <button class="py-4 font-mono rounded-md w-full my-1.5 bg-red-400">
+      Guardar
+    </button>
+  </form>
+  <form action="{% url 'product_delete' producto.id %}" method="POST">
+    {% csrf_token %}
+    <button class="p-4 font-mono rounded-md my-1.5 bg-violet-400">
+      delete
+    </button>
+  </form>
+</div>
+
+{% endblock %}

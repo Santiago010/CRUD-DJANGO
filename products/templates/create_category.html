@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<div class="w-full h-full flex justify-center">
+  <form class="bg-green-100 p-8 my-8 rounded-md" method="POST">
+    <h1 class="text-center font-mono text-3xl">¡Nueva Categoria!</h1>
+    {% csrf_token %} {{form.as_p}}
+    <button class="py-4 font-mono rounded-md w-full my-1.5 bg-red-400">
+      Añadir
+    </button>
+  </form>
+</div>
+
+{{error}} {% endblock %}

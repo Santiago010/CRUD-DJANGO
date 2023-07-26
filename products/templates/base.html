@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"
+    />
+    <title>CRUD</title>
+  </head>
+  <body class="bg-sky-50 text-indigo-950">
+    <nav class="bg-red-400 px-8 py-4">
+      <ul class="flex flex-row justify-between">
+        <li>
+          <a class="font-mono text-4xl" href="">menu</a>
+        </li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a class="font-mono text-slate-500 italic text-4xl" href="/logout">Logout</a>
+        </li>
+        {% else %}
+        <li>
+          <a class="font-mono text-slate-500 text-4xl" href="/signup">Signup</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+        <nav class="bg-yellow-200">
+      <ul  class="flex flex-row justify-between px-8 py-2">
+        <li>
+          <a href="/">productos</a>
+        </li>
+        <li>
+          <a href="/category">categorias</a>
+        </li>
+        <li>
+          <a href="/subCategory">SubCategorias</a>
+        </li>
+    </nav>
+    {% block content %} {% endblock content %}
+  </body>
+</html>

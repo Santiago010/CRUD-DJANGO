@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<ul>
+  {% for producto in productos %}
+  <li class="px-6 my-4 flex flex-row">
+    <a href="{% url 'product_details' producto.id %}" class="underline"
+      ><span class="mdi mdi-alien-outline mx-4"></span>{{producto.name}}</a
+    >
+    <p class="mx-4">{{producto.sub_categoria}}</p>
+    <p class="mx-4">${{producto.price}}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<a
+  href="/products/create"
+  class="m-4 rounded-full shadow-lg p-4 bg-red-400 z-50 absolute bottom-0 right-0"
+>
+  <span class="mdi mdi-plus text-4xl"></span>
+</a>
+
+{% endblock %}

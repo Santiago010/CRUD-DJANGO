@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<ul>
+  {% for categoria in categorias %}
+  <li class="px-6 my-4 flex flex-row">
+    <a href="{% url 'category_details' categoria.id %}" class="underline"
+      ><span class="mdi mdi-alien-outline mx-4"></span>{{categoria.name}}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+<a
+  href="/create/category"
+  class="m-4 rounded-full shadow-lg p-4 bg-red-400 z-50 absolute bottom-0 right-0"
+>
+  <span class="mdi mdi-plus text-4xl"></span>
+</a>
+
+{% endblock %}
